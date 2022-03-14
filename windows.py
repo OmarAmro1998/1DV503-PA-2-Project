@@ -90,19 +90,33 @@ def selectanime(myCursor):
 def add_user(cursor):
 
     layout = [
-        [sg.Text("User ID", size=(22, 1)),],
+        [
+            sg.Text("User ID", size=(22, 1)),
+        ],
         [sg.InputText((), key="-ID-")],
-        [sg.Text("Username", size=(22, 1)),],
+        [
+            sg.Text("Username", size=(22, 1)),
+        ],
         [sg.InputText((), key="-USERNAME-")],
-        [sg.Text("Total Anime", size=(22, 1)),],
+        [
+            sg.Text("Total Anime", size=(22, 1)),
+        ],
         [sg.InputText((), key="-ANIME-")],
-        [sg.Text("Total Completed", size=(22, 1)),],
+        [
+            sg.Text("Total Completed", size=(22, 1)),
+        ],
         [sg.InputText((), key="-COMPLETED-")],
-        [sg.Text("Total On Hold", size=(22, 1)),],
+        [
+            sg.Text("Total On Hold", size=(22, 1)),
+        ],
         [sg.Input((), key="-HOLD-")],
-        [sg.Text("Total Plan To Watch", size=(22, 1)),],
+        [
+            sg.Text("Total Plan To Watch", size=(22, 1)),
+        ],
         [sg.Input((), key="-PLANNED-")],
-        [sg.Text("Waifu ID", size=(22, 1)),],
+        [
+            sg.Text("Waifu ID", size=(22, 1)),
+        ],
         [sg.Input((), key="-WAIFU-")],
         [sg.Submit()],
     ]
@@ -374,9 +388,6 @@ def character_name_as_title(myCursor):
 # Now thats a nice view
 def ponetial_waifus_not_blonde(myCursor):
     val1 = []
-    myCursor.execute(
-        "CREATE VIEW `Potential_Waifus` AS SELECT characters.name, characters.gender,characters.hair FROM characters WHERE characters.gender ='Female';"
-    )
     myCursor.execute("SELECT name, hair FROM Potential_Waifus WHERE NOT hair='Blonde';")
     for i in myCursor:
         val1.append(list(i))
@@ -397,7 +408,7 @@ def ponetial_waifus_not_blonde(myCursor):
     ]
 
     mainLayout = [[sg.Column(layout1)]]
-    window = sg.Window("Character As Title", mainLayout, resizable=True)
+    window = sg.Window("Waifus", mainLayout, resizable=True)
 
     while True:
         event, values = window.read()
