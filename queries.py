@@ -127,7 +127,6 @@ def create_table_anime(cursor):
             )
 
 
-# ONLY ONE WAIFU PER USER.
 def create_table_characters(cursor):
     create_waifus = (
         "CREATE TABLE `characters` ("
@@ -142,6 +141,9 @@ def create_table_characters(cursor):
     try:
         print("Creating table Characters: ")
         cursor.execute(create_waifus)
+        cursor.execute(
+            "CREATE VIEW `Potential_Waifus` AS SELECT characters.name, characters.gender,characters.hair FROM characters WHERE characters.gender ='Female';"
+        )
         file = open("data/characters.csv")
         # Get data from the file
         csv_data = csv.reader(file)
@@ -223,7 +225,8 @@ def create_table_manga(cursor):
                 skipHeader = False
                 continue
             cursor.execute(
-                "INSERT INTO manga_list(title, type, dates)" "VALUES(%s, %s, %s)", row,
+                "INSERT INTO manga_list(title, type, dates)" "VALUES(%s, %s, %s)",
+                row,
             )
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
