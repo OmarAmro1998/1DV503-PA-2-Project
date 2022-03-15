@@ -13,9 +13,8 @@ Only has one user who is me
     pip install -r requirements.txt
     ```
 ### Starting
-    ```
+
     python3 start.py
-    ```
 
 ### Starting
 After launching the program, it will ask to connect to your database, you will need to enter **username**, **password** and **host address**, if you are using **MAMP** you will need to go to quieries.py and uncomment 19th line with unix_socket 
