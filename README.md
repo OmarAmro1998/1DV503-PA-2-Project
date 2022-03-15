@@ -7,9 +7,12 @@ Only has one user who is me
     git clone https://github.com/LizaSil/1DV503-Assingment-2-Project.git
     ```
     ```
+    cd /1DV503-PA-2-Project-main
+    ```
+    ```
     pip install -r requirements.txt
     ```
-
+### Starting
     ```zsh
     python3 start.py
     ```
