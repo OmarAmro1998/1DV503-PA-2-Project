@@ -13,7 +13,7 @@ Only has one user who is me
     pip install -r requirements.txt
     ```
 ### Starting
-    ```zsh
+    ```
     python3 start.py
     ```
 
