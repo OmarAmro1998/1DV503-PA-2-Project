@@ -6,9 +6,11 @@ Only has one user who is me
     ```zsh
     git clone https://github.com/LizaSil/1DV503-Assingment-2-Project.git
     ```
+ 2. Go to project folder
     ```
     cd /1DV503-PA-2-Project-main
     ```
+ 3. Install dependencies
     ```
     pip install -r requirements.txt
     ```
